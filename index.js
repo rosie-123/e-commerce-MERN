@@ -1,10 +1,31 @@
 const express = require("express");
+const authRoutes = require("./routes/authRoutes");
+const apiRoutes = require("./routes/api")
+const mongoose = require("mongoose");
+const cookieSession = require("cookie-session");
+const passport = require("passport"); // tell passport to make use of cookies
+const keys = require("./config/keys");
+require("./models/User");
 require("./services/passport");
-const authRoutes = require('./routes/authRoutes')
+
+mongoose.connect(keys.mongoURI, {
+  useNewUrlParser: true,
+  useUnifiedTopology: true,
+});
 
 const app = express();
 
-app.use('/auth/google', authRoutes);
+app.use(
+  cookieSession({
+    maxAge: 24 * 60 * 60 * 1000,
+    keys: [keys.cookieKey],
+  })
+);
+app.use(passport.initialize());
+app.use(passport.session());
+
+app.use("/auth/google", authRoutes);
+app.use("/api", apiRoutes);
 
 const PORT = process.env.PORT || 3000;
 app.listen(PORT);
