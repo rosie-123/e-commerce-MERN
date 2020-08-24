@@ -1,6 +1,5 @@
 const express = require("express");
 const authRoutes = require("./routes/authRoutes");
-const apiRoutes = require("./routes/api")
 const mongoose = require("mongoose");
 const cookieSession = require("cookie-session");
 const passport = require("passport"); // tell passport to make use of cookies
@@ -24,8 +23,7 @@ app.use(
 app.use(passport.initialize());
 app.use(passport.session());
 
-app.use("/auth/google", authRoutes);
-app.use("/api", apiRoutes);
+app.use("/", authRoutes);
 
 const PORT = process.env.PORT || 3000;
 app.listen(PORT);
