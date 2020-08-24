@@ -19,7 +19,7 @@ passport.use(
   new GoogleStrategy(
     {
       clientID: keys.googleClientID,
-      clientSecret: keys.googleCientSecret,
+      clientSecret: keys.googleClientSecret,
       callbackURL: keys.googleCallbackURL,
     },
     (accessToken, refreshToken, profile, done) => {
