@@ -32,7 +32,7 @@ passport.use(
             googleID: profile.id,
           })
             .save()
-            .then((user) => done(null, user));
+            .then(user => done(null, user));
         }
       });
     }
@@ -54,7 +54,7 @@ passport.use(
             facebookID: profile.id,
           })
             .save()
-            .then((user) => done(null, user));
+            .then(user => done(null, user));
         }
       });
     }
