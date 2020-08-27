@@ -22,19 +22,17 @@ passport.use(
       clientSecret: keys.googleClientSecret,
       callbackURL: keys.googleCallbackURL,
     },
-    (accessToken, refreshToken, profile, done) => {
-      User.findOne({ googleID: profile.id }).then((existingUser) => {
-        if (existingUser) {
-          // The user has been recorded with a unique id.
-          done(null, existingUser);
-        } else {
-          new User({
-            googleID: profile.id,
-          })
-            .save()
-            .then(user => done(null, user));
-        }
-      });
+    async (accessToken, refreshToken, profile, done) => {
+      const existingUser = await User.findOne({ googleID: profile.id });
+      if (existingUser) {
+        // The user has been recorded with a unique id.
+        return done(null, existingUser);
+      } 
+        const user = await new User({
+          googleID: profile.id,
+        }).save();
+        done(null, user);
+      
     }
   )
 );
@@ -45,18 +43,17 @@ passport.use(
       clientSecret: keys.facebookClientSecret,
       callbackURL: keys.facebookCallbackURL,
     },
-    (accessToken, refreshToken, profile, done) => {
-      User.findOne({ facebookID: profile.id }).then((existingUser) => {
-        if (existingUser) {
-          done(null, existingUser);
-        } else {
-          new User({
-            facebookID: profile.id,
-          })
-            .save()
-            .then(user => done(null, user));
-        }
-      });
+    async (accessToken, refreshToken, profile, done) => {
+      const existingUser = await User.findOne({ facebookID: profile.id });
+      if (existingUser) {
+        // The user has been recorded with a unique id.
+        return done(null, existingUser);
+      } 
+        const user = await new User({
+          facebookID: profile.id,
+        }).save();
+        done(null, user);
+      
     }
   )
 );
