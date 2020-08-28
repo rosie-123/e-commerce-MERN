@@ -21,6 +21,7 @@ passport.use(
       clientID: keys.googleClientID,
       clientSecret: keys.googleClientSecret,
       callbackURL: keys.googleCallbackURL,
+      proxy: true,
     },
     async (accessToken, refreshToken, profile, done) => {
       const existingUser = await User.findOne({ googleID: profile.id });
@@ -42,6 +43,7 @@ passport.use(
       clientID: keys.facebookClientID,
       clientSecret: keys.facebookClientSecret,
       callbackURL: keys.facebookCallbackURL,
+      proxy: true,
     },
     async (accessToken, refreshToken, profile, done) => {
       const existingUser = await User.findOne({ facebookID: profile.id });

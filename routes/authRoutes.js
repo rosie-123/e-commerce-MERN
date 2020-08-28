@@ -9,18 +9,18 @@ router.get(
   })
 );
 
-router.get("/auth/google/callback", passport.authenticate("google"));
+router.get("/auth/google/callback", passport.authenticate("google", { failureRedirect: "/404", successRedirect: "/" }));
 
 router.get("/api/logout", (req, res) => {
   req.logOut();
-  res.send(req.user);
+  res.redirect('/');
 });
 
 router.get("/auth/facebook", passport.authenticate("facebook"));
 
 router.get(
   "/auth/facebook/callback",
-  passport.authenticate("facebook", { failureRedirect: "/404", successRedirect: "/success" })
+  passport.authenticate("facebook", { failureRedirect: "/404", successRedirect: "/" })
 );
 
 router.get("/api/current_user", (req, res) => {
