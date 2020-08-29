@@ -16,7 +16,16 @@ const Header = (props) => {
       </div>
       {props.auth === false ? (
         <div className="header__user">
-          <a href="/auth/google">LOG IN</a>
+          <span>
+            LOGIN WITH{" "}
+            <a className="clickable__link" href="/auth/google">
+              GOOGLE
+            </a>{" "}
+            /{" "}
+            <a className="clickable__link" href="/auth/facebook">
+              FACEBOOK
+            </a>
+          </span>
         </div>
       ) : props.auth === null ? (
         <div></div>
@@ -25,7 +34,7 @@ const Header = (props) => {
           <a href="/cart">
             <span>CART</span>
           </a>
-          <a href="/api/logout">LOG OUT</a>
+          <a href="/auth/logout">LOG OUT</a>
         </div>
       )}
     </div>

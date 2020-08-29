@@ -41,3 +41,6 @@ a {
 .header__user > a{
     margin: auto 1vw;
 }
+.clickable__link {
+    color: red;
+}

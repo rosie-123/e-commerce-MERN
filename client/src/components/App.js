@@ -11,6 +11,7 @@ const newOrder = () => <h2>New Order</h2>;
 const App = (props) => {
   useEffect(() => {
     props.fetchUser();
+    props.fetchProducts();
   }, []);
   return (
     <div>

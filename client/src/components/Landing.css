@@ -1,0 +1,30 @@
+.landing {
+    margin: 10px 40px;
+}
+
+.product__image {
+    object-fit: contain;
+    height: 400px;
+}
+.products__container {
+    margin-top: 5vh;
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+}
+.product__container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    width: 25%;
+}
+.product__text {
+    margin-top: 2vh;
+}
+.product__text a {
+    text-decoration: underline;
+}
+.product__description {
+    color: red;
+}
