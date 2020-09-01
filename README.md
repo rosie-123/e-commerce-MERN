@@ -16,7 +16,7 @@ An e-commerce website created by MERN stack
 
 ## Inspired by
 
-[Node with React: Fullstack Web Development](https://medium.com/javascript-in-plain-english/the-only-introduction-to-redux-and-react-redux-youll-ever-need-8ce5da9e53c6)
-[Redux Shopping Cart](https://www.youtube.com/watch?v=731Ur2HGRBY)
-[MERN E-commerce](https://github.com/mohamedsamara/mern-ecommerce)
-and other YouTube channels
+- [Node with React: Fullstack Web Development](https://medium.com/javascript-in-plain-english/the-only-introduction-to-redux-and-react-redux-youll-ever-need-8ce5da9e53c6)
+- [Redux Shopping Cart](https://www.youtube.com/watch?v=731Ur2HGRBY)
+- [MERN E-commerce](https://github.com/mohamedsamara/mern-ecommerce)
+- Other YouTube channels
