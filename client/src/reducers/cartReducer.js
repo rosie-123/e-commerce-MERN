@@ -1,10 +1,18 @@
-import { FETCH_PRODUCTS } from "../actions/types";
+import { FETCH_PRODUCTS, ADD_TO_CART } from "../actions/types";
 
-export default (state, action) => {
+const initStore = {
+  products: [],
+  productsInCart: [],
+  amount: 0,
+  price: 0,
+}
+export default (state = initStore, action) => {
   switch (action.type) {
     case FETCH_PRODUCTS:
-      return action.payload || false;
+      return {...state, products: action.payload || []}
+    case ADD_TO_CART:
+
     default:
-      return [];
+      return state;
   }
 };

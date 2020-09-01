@@ -2,7 +2,7 @@ import React from "react";
 import { connect } from "react-redux";
 import "./Header.css";
 import SearchIcon from "@material-ui/icons/Search";
-const Header = (props) => {
+const Header = ({ auth, cart }) => {
   return (
     <div className="header">
       <div className="header__brand">
@@ -14,7 +14,7 @@ const Header = (props) => {
         <input></input>
         <SearchIcon />
       </div>
-      {props.auth === false ? (
+      {auth === false ? (
         <div className="header__user">
           <span>
             LOGIN WITH{" "}
@@ -27,12 +27,12 @@ const Header = (props) => {
             </a>
           </span>
         </div>
-      ) : props.auth === null ? (
+      ) : auth === null ? (
         <div></div>
       ) : (
         <div className="header__user">
           <a href="/cart">
-            <span>CART</span>
+            <span>CART ( {cart.amount} )</span>
           </a>
           <a href="/auth/logout">LOG OUT</a>
         </div>
@@ -41,8 +41,8 @@ const Header = (props) => {
   );
 };
 
-function mapStateToProps({ auth }) {
-  return { auth };
+function mapStateToProps({ auth, cart }) {
+  return { auth, cart };
 }
 
 export default connect(mapStateToProps)(Header);

@@ -4,9 +4,8 @@ import { connect } from "react-redux";
 import * as actions from "../actions";
 import Header from "./Header";
 import Landing from './Landing'
-const Dashboard = () => <h2>Dashboard</h2>;
+import ShoppingCart from "./ShoppingCart";
 const Orders = () => <h2>Orders</h2>;
-const newOrder = () => <h2>New Order</h2>;
 
 const App = (props) => {
   useEffect(() => {
@@ -20,7 +19,7 @@ const App = (props) => {
           <Header />
           <Route exact path="/" component={Landing} />
           <Route exact path="/orders" component={Orders}></Route>
-          <Route path="/orders/new" component={newOrder}></Route>
+          <Route path="/cart" component={ShoppingCart}></Route>
         </div>
       </BrowserRouter>
     </div>
