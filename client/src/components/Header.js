@@ -1,10 +1,13 @@
-import React, {useEffect, useState} from "react";
+import React from "react";
 import { connect } from "react-redux";
 import "./Header.css";
 import SearchIcon from "@material-ui/icons/Search";
+import Divider from "@material-ui/core/Divider";
+
 const Header = ({ auth, cart }) => {
 
   return (
+    <div>
     <div className="header">
       <div className="header__brand">
         <a href="/">
@@ -38,6 +41,8 @@ const Header = ({ auth, cart }) => {
           <a href="/auth/logout">LOG OUT</a>
         </div>
       )}
+    </div>
+    <Divider />
     </div>
   );
 };

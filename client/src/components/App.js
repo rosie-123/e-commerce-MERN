@@ -5,6 +5,7 @@ import * as actions from "../actions";
 import Header from "./Header";
 import Landing from './Landing'
 import ShoppingCart from "./ShoppingCart";
+import Footer from "./Footer"
 
 const App = (props) => {
   useEffect(() => {
@@ -18,6 +19,7 @@ const App = (props) => {
           <Header />
           <Route exact path="/" component={Landing} />
           <Route path="/cart" component={ShoppingCart}></Route>
+          <Footer />
         </div>
       </BrowserRouter>
     </div>

@@ -2,6 +2,7 @@ import React from "react";
 import { connect } from "react-redux";
 import "./Landing.css";
 import { ADD_TO_CART } from "../actions/types";
+import Button from '@material-ui/core/Button';
 
 const Landing = ({ cart, dispatch }) => {
 
@@ -21,7 +22,7 @@ const Landing = ({ cart, dispatch }) => {
                 </small>
               </div>
               <small>
-                <a  onClick={() => dispatch({ type: ADD_TO_CART, key })}>ADD TO CART</a>
+                <Button onClick={() => dispatch({ type: ADD_TO_CART, key })}>ADD TO CART</Button>
               </small>
             </div>
           </div>

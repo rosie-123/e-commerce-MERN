@@ -4,7 +4,7 @@
 
 .product__image {
     object-fit: contain;
-    height: 400px;
+    height: 40vh;
 }
 .products__container {
     margin-top: 5vh;
@@ -13,6 +13,7 @@
     flex-wrap: wrap;
 }
 .product__container {
+    margin-bottom: 3vh;
     display: flex;
     flex-direction: column;
     align-items: center;
