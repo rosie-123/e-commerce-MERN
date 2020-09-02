@@ -4,6 +4,7 @@ import "./Landing.css";
 import { ADD_TO_CART } from "../actions/types";
 
 const Landing = ({ cart, dispatch }) => {
+
   return (
     <div className="landing">
       <div className="products__container">
@@ -26,7 +27,6 @@ const Landing = ({ cart, dispatch }) => {
           </div>
         ))}
       </div>
-      {console.log(cart)}
     </div>
   );
 };

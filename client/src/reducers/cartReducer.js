@@ -17,6 +17,7 @@ export default (state = initStore, action) => {
       } else {
         state.productsInCart[item._id] = 1;
       }
+      state.price += item.price;
       return {...state, amount: state.amount + 1}
     default:
       return state;

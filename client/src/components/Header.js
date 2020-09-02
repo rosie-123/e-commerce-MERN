@@ -1,8 +1,9 @@
-import React from "react";
+import React, {useEffect, useState} from "react";
 import { connect } from "react-redux";
 import "./Header.css";
 import SearchIcon from "@material-ui/icons/Search";
 const Header = ({ auth, cart }) => {
+
   return (
     <div className="header">
       <div className="header__brand">
