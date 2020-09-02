@@ -1,0 +1,23 @@
+#cart_container {
+  margin: auto;
+  width: 80vw;
+  display: flex;
+}
+#product_container {
+  width: 60%;
+  margin: 35px auto;
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+}
+#payment {
+  width: 40%;
+  margin: 35px 10px;
+  padding: 10px;
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+}
+#checkout_btn {
+  margin-bottom: 25px;
+}

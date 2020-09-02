@@ -13,5 +13,5 @@ export const fetchProducts = () => async (dispatch) => {
 };
 
 export const addToCart = (id) => {
-  return { type: ADD_TO_CART, payload: {id} }
+  return { type: ADD_TO_CART, id }
 }

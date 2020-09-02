@@ -5,7 +5,6 @@ import * as actions from "../actions";
 import Header from "./Header";
 import Landing from './Landing'
 import ShoppingCart from "./ShoppingCart";
-const Orders = () => <h2>Orders</h2>;
 
 const App = (props) => {
   useEffect(() => {
@@ -18,7 +17,6 @@ const App = (props) => {
         <div>
           <Header />
           <Route exact path="/" component={Landing} />
-          <Route exact path="/orders" component={Orders}></Route>
           <Route path="/cart" component={ShoppingCart}></Route>
         </div>
       </BrowserRouter>

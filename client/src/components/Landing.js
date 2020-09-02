@@ -1,8 +1,9 @@
 import React from "react";
 import { connect } from "react-redux";
 import "./Landing.css";
+import { ADD_TO_CART } from "../actions/types";
 
-const Landing = ({ cart }) => {
+const Landing = ({ cart, dispatch }) => {
   return (
     <div className="landing">
       <div className="products__container">
@@ -19,18 +20,19 @@ const Landing = ({ cart }) => {
                 </small>
               </div>
               <small>
-                <a href="/">ADD TO CART</a>
+                <a  onClick={() => dispatch({ type: ADD_TO_CART, key })}>ADD TO CART</a>
               </small>
             </div>
           </div>
         ))}
       </div>
+      {console.log(cart)}
     </div>
   );
 };
 
-function mapStateToProps({ cart }) {
-  return { cart };
+function mapStateToProps({ cart, dispatch }) {
+  return { cart, dispatch };
 }
 
 export default connect(mapStateToProps)(Landing);
