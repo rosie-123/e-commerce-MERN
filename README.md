@@ -1,6 +1,8 @@
 # e-commerce-MERN
 
 An e-commerce website created by MERN stack
+## Demo for current progress
+![alt text](https://s1.ax1x.com/2020/09/03/wCWJhT.gif "incomplete demo")
 
 ## Completed
 - Created API for user authentication & product management
