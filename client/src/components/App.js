@@ -19,6 +19,9 @@ const App = (props) => {
           <Header />
           <Route exact path="/" component={Landing} />
           <Route path="/cart" component={ShoppingCart}></Route>
+          <Route path="/clothes" component={Landing}></Route>
+          <Route path="/ja" component={Landing}></Route>
+          <Route path="/men" component={Landing}></Route>
           <Footer />
         </div>
       </BrowserRouter>

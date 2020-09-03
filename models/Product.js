@@ -22,6 +22,10 @@ const productSchema = new Schema({
     brand: {
         type: String,
         required: true,
+    },
+    itemType: {
+        type: String,
+        required: true,
     }
 })
 
